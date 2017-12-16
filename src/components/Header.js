@@ -71,8 +71,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-// <NavItem>
-//   Technology
-//   {this.arrowIcon()}
-// </NavItem>
