@@ -18,11 +18,13 @@ class App extends Component {
         <Body>
           <Header />
           <Route exact path="/" component={HomePage}/>
-          <Route exact path="/article" component={Article}/>
+          <Route path="/articles/:value" component ={Article} />
         </Body>
       </Router>
     );
   }
 }
+
+// <Route exact path="/article" component={Article}/>
 
 export default App;

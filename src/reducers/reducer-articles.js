@@ -2,7 +2,7 @@ export default function() {
   return [
     {
       id: 1,
-      description: "Mac Mini Review",
+      description: "Should Apple get rid of the Mac Mini?",
       published: "December 30, 2017",
     },
     {

@@ -8,6 +8,7 @@ const Container = styled.div`
 
 class Article extends Component {
   render() {
+    console.log(this.props.match.params.value);
     return (
     <Container>
       <ArticleDetails />

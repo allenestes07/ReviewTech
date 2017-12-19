@@ -115,7 +115,7 @@ class Grid extends Component {
     return (
       <Container>
         <Wrapper>
-          <Image1 to="/article">
+          <Image1 to={`/articles/${ this.props.articles[0].id }`}>
             <ArticleText>
               {this.props.articles[0].description}
             </ArticleText>
