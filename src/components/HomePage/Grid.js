@@ -111,22 +111,23 @@ const Image4 = styled.div`
 
 class Grid extends Component {
   render() {
+    // console.log(this.props.articles);
     return (
       <Container>
         <Wrapper>
           <Image1 to="/article">
             <ArticleText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              {this.props.articles[0].description}
             </ArticleText>
           </Image1>
           <Image2>
             <ArticleText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              {this.props.articles[1].description}
             </ArticleText>
           </Image2>
           <Image3>
             <ArticleText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              {this.props.articles[2].description}
             </ArticleText>
           </Image3>
           <Image4>

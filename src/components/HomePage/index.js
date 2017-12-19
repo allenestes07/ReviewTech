@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+// import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import Grid from './Grid';
 import Article from './Articles';
 
@@ -11,11 +13,17 @@ class HomePage extends Component {
   render() {
     return (
       <Container>
-        <Grid />
+        <Grid articles={this.props.articles} />
         <Article />
       </Container>
     );
   }
 }
 
-export default HomePage;
+function mapStateToProps(state) {
+  return {
+    articles: state.articles
+  };
+}
+
+export default connect(mapStateToProps)(HomePage);
