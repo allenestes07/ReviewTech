@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import canon from '../../images/canon.jpeg';
 import iphone from '../../images/iphone.jpeg';
 
 const Container = styled.div`
@@ -73,11 +72,11 @@ const Image2 = styled(Link)`
   }
 `;
 
-const Image3 = styled.div`
+const Image3 = styled(Link)`
   position: relative;
   height: 270px;
   margin: 5px;
-  background-image: url('${canon}');
+  background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -109,7 +108,7 @@ const Image4 = styled.div`
 
 class Grid extends Component {
   render() {
-    console.log(this.props.articles[1].id);
+    // console.log(this.props.articles[1].id);
     return (
       <Container>
         <Wrapper>
@@ -123,7 +122,7 @@ class Grid extends Component {
               {this.props.articles[1].description}
             </ArticleText>
           </Image2>
-          <Image3>
+          <Image3 to={`/articles/${ this.props.articles[2].id }`} image={this.props.articles[2].image}>
             <ArticleText>
               {this.props.articles[2].description}
             </ArticleText>

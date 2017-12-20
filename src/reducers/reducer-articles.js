@@ -1,5 +1,6 @@
 import macbook from '../images/macbook-laptop.jpeg';
 import watch from '../images/watch.jpeg';
+import canon from '../images/canon.jpeg';
 
 export default function() {
   return [
@@ -19,6 +20,7 @@ export default function() {
       id: 3,
       description: "Ring Doorbell Review",
       published: "December 30, 2017",
+      image: `${canon}`,
     }
   ]
 }
