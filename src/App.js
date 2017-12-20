@@ -18,7 +18,7 @@ class App extends Component {
         <Body>
           <Header />
           <Route exact path="/" component={HomePage}/>
-          <Route path="/articles/:value" component ={Article} />
+          <Route path="/articles/:id" component ={Article} />
         </Body>
       </Router>
     );

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import macbook from '../../images/macbook-laptop.jpeg';
-import watch from '../../images/watch.jpeg';
 import canon from '../../images/canon.jpeg';
 import iphone from '../../images/iphone.jpeg';
 
@@ -28,7 +26,7 @@ const Image1 = styled(Link)`
   position: relative;
   height: 270px;
   margin: 5px;
-  background-image: url('${macbook}');
+  background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -58,11 +56,11 @@ const ArticleText = styled.div`
   }
 `;
 
-const Image2 = styled.div`
+const Image2 = styled(Link)`
   position: relative;
   height: 270px;
   margin: 5px;
-  background-image: url('${watch}');
+  background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -111,16 +109,16 @@ const Image4 = styled.div`
 
 class Grid extends Component {
   render() {
-    // console.log(this.props.articles);
+    console.log(this.props.articles[1].id);
     return (
       <Container>
         <Wrapper>
-          <Image1 to={`/articles/${ this.props.articles[0].id }`}>
+          <Image1 to={`/articles/${ this.props.articles[0].id }`} image={this.props.articles[0].image}>
             <ArticleText>
               {this.props.articles[0].description}
             </ArticleText>
           </Image1>
-          <Image2>
+          <Image2 to={`/articles/${ this.props.articles[1].id }`} image={this.props.articles[1].image}>
             <ArticleText>
               {this.props.articles[1].description}
             </ArticleText>
