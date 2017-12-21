@@ -41,7 +41,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const Column1Header = styled.div`
-  width: 10%;
+  width: 100px;
   color: #FFFFFF;
   background-color: #1e88e5;
   text-align: center;
@@ -58,15 +58,16 @@ const Arrow = styled.div`
     height: auto;
     top: 2;
     margin-left: -10px;
-    left: 7%;
+    left: 70px;
     border-width: 10px;
     border-style: solid;
     border-color: #1e88e5 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
 `;
 
 const Column1 = styled.div`
-  display: block;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
   margin-top: 30px;
   padding: 15px;
 `;
@@ -100,8 +101,9 @@ const PublishDate = styled.span`
 `;
 
 const Column2 = styled.div`
-  display: block;
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
   margin-top: 30px;
   padding: 15px;
 `;
@@ -121,7 +123,9 @@ const Image2 = styled.div`
 `;
 
 const Ads = styled.div`
-  flex-grow: 5;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
   margin: 5px;
   background-color: #f4f4f5;;
 `;

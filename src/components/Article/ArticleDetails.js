@@ -28,7 +28,6 @@ const Column1 = styled.div`
   flex-basis: 70%;
   flex-direction: column;
   height: 500px;
-  // background-color: green;
 `;
 
 const ArticleHeader = styled.div`
@@ -42,12 +41,13 @@ const ArticleHeader = styled.div`
 
 const ArticleImage = styled.div`
   display: flex;
-  height: 380.11px;
+  height: 250.8px;
   background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid #000000;
+  flex-shrink: 0;
 `;
 
 const DetailsWrapper = styled.div`
