@@ -11,14 +11,14 @@ const Container = styled.div`
 
 class Article extends Component {
   componentDidMount() {
-    this.props.selectedItem.selectedArticle(this.props.match.params.id);
+    this.props.selectedItem.selectedArticle(this.props.match.params.id, this.props.articles);
   }
   render() {
     // console.log(this.props.match.params.id);
     // console.log(this.props.articles);
     return (
     <Container>
-      <ArticleDetails />
+      <ArticleDetails activeArticle={this.props.activeArticle} />
     </Container>
     );
   }
@@ -26,7 +26,8 @@ class Article extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    articles: state.articles
+    articles: state.articles,
+    activeArticle: state.activeArticle
   };
 };
 

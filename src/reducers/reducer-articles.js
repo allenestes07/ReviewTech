@@ -13,7 +13,7 @@ export default function() {
     {
       id: 2,
       description: "Blue Yeti Professional Microphone",
-      published: "December 30, 2017",
+      published: "December 25, 2017",
       image: `${watch}`,
     },
     {

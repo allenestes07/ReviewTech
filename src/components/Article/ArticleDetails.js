@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
-import macbook from '../../images/macbook-laptop.jpeg';
 
 const Container = styled.div`
   display: flex;
@@ -42,7 +41,7 @@ const ArticleHeader = styled.div`
 const ArticleImage = styled.div`
   display: flex;
   height: 380.11px;
-  background-image: url('${macbook}');
+  background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -107,15 +106,15 @@ class ArticleDetails extends Component {
       <Wrapper>
         <Column1>
           <ArticleHeader>
-            Being a rock-star is a matter of fashion
+            {this.props.activeArticle.description}
           </ArticleHeader>
           <DetailsWrapper>
             <PublishDate>
               {this.calendar()}
-              September 17, 2017
+              {this.props.activeArticle.published}
             </PublishDate>
           </DetailsWrapper>
-          <ArticleImage />
+          <ArticleImage image={this.props.activeArticle.image}/>
           <TextWrapper>
             <ArticleText>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
