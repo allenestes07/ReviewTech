@@ -123,7 +123,7 @@ const Image2 = styled.div`
 const Ads = styled.div`
   flex-grow: 5;
   margin: 5px;
-  background-color: red;
+  background-color: #f4f4f5;;
 `;
 
 class Articles extends Component {

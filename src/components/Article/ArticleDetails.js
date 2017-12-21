@@ -85,7 +85,7 @@ const Column2 = styled.div`
   flex-basis: 29%;
   flex-direction: column;
   height: 500px;
-  background-color: yellow;
+  background-color: #f4f4f5;
 `;
 
 class ArticleDetails extends Component {
