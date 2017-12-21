@@ -35,6 +35,7 @@ const Image1 = styled(Link)`
 
   &:hover {
     cursor: pointer;
+    box-shadow: 0 1px 10px black;
   }
 `;
 
@@ -69,6 +70,7 @@ const Image2 = styled(Link)`
 
   &:hover {
     cursor: pointer;
+    box-shadow: 0 1px 10px black;
   }
 `;
 
@@ -86,6 +88,7 @@ const Image3 = styled(Link)`
 
   &:hover {
     cursor: pointer;
+    box-shadow: 0 1px 10px black;
   }
 `;
 
@@ -103,6 +106,7 @@ const Image4 = styled.div`
 
   &:hover {
     cursor: pointer;
+    box-shadow: 0 1px 10px black;
   }
 `;
 
