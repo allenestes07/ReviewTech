@@ -6,15 +6,16 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
-  width: 100%;
+  flex-basis: 100%;
   margin-top: 30px;
   padding: 5px;
 `;
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-flow: wrap;
+  justify-content: space-between;
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -23,7 +24,7 @@ const Wrapper = styled.div`
 
 const Column1 = styled.div`
   display: flex;
-  width: 70%;
+  flex-basis: 70%;
   flex-direction: column;
   height: 500px;
   // background-color: green;
@@ -81,7 +82,7 @@ const ArticleText = styled.p`
 
 const Column2 = styled.div`
   display: flex;
-  width: 30%;
+  flex-basis: 29%;
   flex-direction: column;
   height: 500px;
   background-color: yellow;
