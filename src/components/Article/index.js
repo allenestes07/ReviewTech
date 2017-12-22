@@ -14,8 +14,6 @@ class Article extends Component {
     this.props.selectedItem.selectedArticle(this.props.match.params.id, this.props.articles);
   }
   render() {
-    // console.log(this.props.match.params.id);
-    // console.log(this.props.articles);
     return (
     <Container>
       <ArticleDetails activeArticle={this.props.activeArticle} />

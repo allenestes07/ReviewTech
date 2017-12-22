@@ -19,10 +19,6 @@ const ContentText = styled.p`
 `;
 
 class ArticleText extends Component {
-//   paragraph = () => ( this.props.content.map((para, index) =>
-//     <ContentText key={index}>{para.paragraph}</ContentText>
-//   )
-// );
   render() {
     const paragraph = this.props.content.map((para, index) =>
       <ContentText key={index}>{para.paragraph}</ContentText>
