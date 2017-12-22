@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
 import ShareButtons from './ShareButtons';
+import ArticleText from './ArticleText';
 
 const Container = styled.div`
   display: flex;
@@ -70,17 +71,6 @@ const TextWrapper = styled.div`
   // border: 1px solid #000000;
 `;
 
-const ArticleText = styled.p`
-  display: block;
-  font-family: Open Sans;
-  color: #777777;
-  word-wrap: break-word;
-  font-size: 14px;
-  text-indent: 50px;
-  line-height: 24px;
-  margin: 0 0 10px;
-`;
-
 const Column2 = styled.div`
   display: flex;
   flex-basis: 29%;
@@ -119,9 +109,7 @@ class ArticleDetails extends Component {
           <ArticleImage image={this.props.activeArticle.image} />
           <ShareButtons activeArticle={this.props.activeArticle} />
           <TextWrapper>
-            <ArticleText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </ArticleText>
+            <ArticleText content={this.props.activeArticle.content}/>
           </TextWrapper>
         </Column1>
         <Column2 />
