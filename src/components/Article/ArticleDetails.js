@@ -42,7 +42,7 @@ const ArticleHeader = styled.div`
 
 const ArticleImage = styled.div`
   display: flex;
-  height: 250.8px;
+  height: 300px;
   background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
