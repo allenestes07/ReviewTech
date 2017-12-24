@@ -110,11 +110,11 @@ const Image4 = styled(Link)`
   }
 `;
 
-const Image5 = styled.div`
+const Image5 = styled(Link)`
   position: relative;
   height: 270px;
   margin: 5px;
-  background-image: url('${iphone}');
+  background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -154,9 +154,9 @@ class Grid extends Component {
               {this.props.articles[3].description}
             </ArticleText>
           </Image4>
-          <Image5>
+          <Image5 to={`/articles/${ this.props.articles[4].id }`} image={this.props.articles[4].image}>
             <ArticleText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              {this.props.articles[4].description}
             </ArticleText>
           </Image5>
         </Wrapper>
