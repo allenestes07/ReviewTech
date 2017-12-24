@@ -92,7 +92,25 @@ const Image3 = styled(Link)`
   }
 `;
 
-const Image4 = styled.div`
+const Image4 = styled(Link)`
+  position: relative;
+  height: 270px;
+  margin: 5px;
+  background-image: url(${props => props.image});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-grow: 1;
+  width: calc(100% * (1/3) - 10px - 1px);
+  border: 1px solid #000000;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 10px black;
+  }
+`;
+
+const Image5 = styled.div`
   position: relative;
   height: 270px;
   margin: 5px;
@@ -131,16 +149,16 @@ class Grid extends Component {
               {this.props.articles[2].description}
             </ArticleText>
           </Image3>
-          <Image4>
+          <Image4 to={`/articles/${ this.props.articles[3].id }`} image={this.props.articles[3].image}>
+            <ArticleText>
+              {this.props.articles[3].description}
+            </ArticleText>
+          </Image4>
+          <Image5>
             <ArticleText>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             </ArticleText>
-          </Image4>
-          <Image4>
-            <ArticleText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </ArticleText>
-          </Image4>
+          </Image5>
         </Wrapper>
       </Container>
     );
