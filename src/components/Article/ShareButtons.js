@@ -25,21 +25,21 @@ class HomePage extends Component {
       <ShareButton
               compact
               socialMedia={'facebook'}
-              url={window.location.href}
+              url={window.location.origin + /articles/ + `${this.props.activeArticle.id}`}
               media={"https://imgs.xkcd.com/comics/error_code.png"}
               text={this.props.activeArticle.description}
        />
        <ShareButton
                compact
                socialMedia={'google-plus'}
-               url={window.location.href}
+               url={window.location.origin + /articles/ + `${this.props.activeArticle.id}`}
                media={"https://imgs.xkcd.com/comics/error_code.png"}
                text={this.props.activeArticle.description}
         />
         <ShareButton
                 compact
                 socialMedia={'twitter'}
-                url={window.location.href}
+                url={window.location.origin + /articles/ + `${this.props.activeArticle.id}`}
                 media={"https://imgs.xkcd.com/comics/error_code.png"}
                 text={this.props.activeArticle.description}
          />

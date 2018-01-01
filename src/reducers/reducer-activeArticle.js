@@ -12,8 +12,11 @@ export default function (state = defaultState, action) {
   // console.log(action.id);
   switch(action.type) {
     case "ACTIVE_ARTICLE":
-    return action.articles.find(item => item.id === parseInt(action.id));
+      return action.articles.find(item => item.id === parseInt(action.id));
     break;
+    // case "SET_SEARCH":
+    //   return action.searchText;
+    // break;
     default: return state;
   }
 }

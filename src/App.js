@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import HomePage from './components/HomePage/index';
 import Article from './components/Article/index';
+import Search from './components/Search/index';
 
 const Body = styled.div`
   margin: 0;
@@ -19,6 +20,7 @@ class App extends Component {
           <Header />
           <Route exact path="/" component={HomePage}/>
           <Route path="/articles/:id" component ={Article} />
+          <Route path="/search" component ={Search} />
         </Body>
       </Router>
     );

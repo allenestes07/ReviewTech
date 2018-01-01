@@ -14,10 +14,17 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  flex-flow: wrap;
+  justify-content: space-between;
   width: 100%;
   margin: 0 auto;
   max-width: 1024px;
+`;
+
+const NavItemWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  width: 100%;
 `;
 
 const NavItem = styled(Link)`
@@ -35,10 +42,25 @@ const NavItem = styled(Link)`
     &:hover {
       color: #ec0000;
       border-bottom: 3px solid #ec0000;
-  }
+    }
 
   &:focus {
     outline: none;
+  }
+`;
+
+const SearchContainer = styled(Link)`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 15px 14px;
+  overflow: hidden;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+
+  &:hover {
+    color: #ec0000;
   }
 `;
 
@@ -48,9 +70,7 @@ class Header extends Component {
     return (
       <FontAwesome
         name = 'angle-down'
-        style={{
-          marginLeft: '5px'
-        }}
+        style={{ marginLeft: '5px' }}
       />
     );
   }
@@ -59,11 +79,18 @@ class Header extends Component {
     return (
       <Container>
         <Wrapper>
+        <NavItemWrapper>
           <NavItem to="/">Home</NavItem>
             <NavItem to="/article">
             Technology
             {this.arrowIcon()}
             </NavItem>
+          </NavItemWrapper>
+            <SearchContainer to="/search">
+              <FontAwesome
+                name = 'search'
+              />
+            </SearchContainer>
         </Wrapper>
       </Container>
     );
