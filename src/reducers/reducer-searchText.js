@@ -4,7 +4,6 @@ export default function (state = null, action) {
   switch(action.type) {
     case "SET_SEARCH":
       return action.searchText;
-    break;
     default: return state;
   }
 }
