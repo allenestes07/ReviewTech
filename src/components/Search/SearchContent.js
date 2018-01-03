@@ -36,14 +36,12 @@ const Input = styled.input`
   padding: 10px;
   outline: none;
   background: #FFFFFF;
+  border: 1px solid #B8B6B6;
 
   &:focus, :hover {
     color: #4b515d;
     border: 1px solid #B8B6B6;
     box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
-  }
-  @media (max-width: 700px) {
-    border: 1px solid #B8B6B6;
   }
 `;
 
