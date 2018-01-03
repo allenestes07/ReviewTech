@@ -11,7 +11,7 @@ export function selectedArticle(id, articles) {
 }
 
 export function setSearch(searchText) {
-  console.log("SEARCH :", searchText);
+  // console.log("SEARCH :", searchText);
   return {
     type: SET_SEARCH,
     searchText

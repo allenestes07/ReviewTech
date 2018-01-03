@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
+import { connect } from 'react-redux';
 import ShareButtons from '../../components/Article/ShareButtons';
 
 const Container = styled.div`
@@ -80,7 +81,7 @@ const Share = styled.div`
 class SearchArticles extends Component {
 Content = () => (
   <ArticleWrapper>
-  {this.props.articles.map((article, index) =>
+  {this.props.articles.filter(article => article.description.includes(this.props.searchText)).map((article, index) =>
     <Article key={index}>
     <Image image={article.image} />
     <TextWrapper>
@@ -116,4 +117,10 @@ Content = () => (
   }
 }
 
-export default SearchArticles;
+const mapStateToProps = (state) => {
+  return {
+    searchText: state.searchText
+  };
+};
+
+export default connect(mapStateToProps)(SearchArticles);
