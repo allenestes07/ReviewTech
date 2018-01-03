@@ -39,7 +39,7 @@ const Article = styled.div`
   margin-bottom: 5px;
 `;
 
-const Image = styled.img`
+const Image = styled(Link)`
   height: 75px;
   width: 75px;
   flex-shrink: 0;
@@ -83,7 +83,7 @@ Content = () => (
   <ArticleWrapper>
   {this.props.articles.filter(article => article.description.toLowerCase().includes(this.props.searchText.toLowerCase())).map((article, index) =>
     <Article key={index}>
-    <Image image={article.image} />
+    <Image image={article.image} to={`/articles/${ article.id }`} />
     <TextWrapper>
       <Description to={`/articles/${ article.id }`}>{article.description}</Description>
       <PublishDate> Published:
@@ -99,7 +99,7 @@ Content = () => (
       {article.published}
       </PublishDate>
       <Share>
-      <ShareButtons activeArticle={article} />
+        <ShareButtons activeArticle={article} />
       </Share>
     </TextWrapper>
     </Article>
