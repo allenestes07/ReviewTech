@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
 import iphone from '../../images/iphone.jpeg';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -72,8 +73,8 @@ const Column1 = styled.div`
   padding: 15px;
 `;
 
-const Image1 = styled.div`
-  background-image: url('${iphone}');
+const Image1 = styled(Link)`
+  background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -86,7 +87,13 @@ const Image1 = styled.div`
   }
 `;
 
-const ArticleHeader = styled.h4`
+const ArticleHeader = styled(Link)`
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  color: #000000;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
@@ -157,18 +164,18 @@ class Articles extends Component {
             <Column1>
               <PublishDate>
                 {this.calendar()}
-                September 17, 2017
+                {this.props.articles[5].published}
               </PublishDate>
-              <Image1 />
-                <ArticleHeader>
-                Why The iPhone X Will Force Apple To Choose Between Good Or Evil
+              <Image1 image={this.props.articles[5].image} to={`/articles/${ this.props.articles[5].id }`} />
+                <ArticleHeader to={`/articles/${ this.props.articles[5].id }`}>
+                  {this.props.articles[5].description}
                 </ArticleHeader>
                 <PublishDate>
                   {this.calendar()}
                   September 17, 2017
                 </PublishDate>
               <Image2 />
-                <ArticleHeader>
+                <ArticleHeader to={`/articles/${ this.props.articles[5].id }`}>
                   The first 'Wolfenstein II' add-on pack is available now
                 </ArticleHeader>
             </Column1>
@@ -178,7 +185,7 @@ class Articles extends Component {
                   December 15, 2017
                 </PublishDate>
                 <Image2 />
-                <ArticleHeader>
+                <ArticleHeader to={`/articles/${ this.props.articles[5].id }`}>
                 As online ads fail, sites mine cryptocurrency
                 </ArticleHeader>
                 <PublishDate>
@@ -186,7 +193,7 @@ class Articles extends Component {
                   September 17, 2017
                 </PublishDate>
                 <Image2 />
-                  <ArticleHeader>
+                  <ArticleHeader to={`/articles/${ this.props.articles[5].id }`}>
                     Buy an Xbox One X and get 'PUBG' free for a limited time
                   </ArticleHeader>
                   <PublishDate>
@@ -194,7 +201,7 @@ class Articles extends Component {
                     September 17, 2017
                   </PublishDate>
                   <Image2 />
-                    <ArticleHeader>
+                    <ArticleHeader to={`/articles/${ this.props.articles[5].id }`}>
                       Creepy platformer 'Inside' leaps from console to iOS
                     </ArticleHeader>
             </Column2>

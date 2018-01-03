@@ -14,7 +14,7 @@ class HomePage extends Component {
     return (
       <Container>
         <Grid articles={this.props.articles} />
-        <Article />
+        <Article articles={this.props.articles} />
       </Container>
     );
   }
