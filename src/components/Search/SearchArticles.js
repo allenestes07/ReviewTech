@@ -81,7 +81,7 @@ const Share = styled.div`
 class SearchArticles extends Component {
 Content = () => (
   <ArticleWrapper>
-  {this.props.articles.filter(article => article.description.includes(this.props.searchText)).map((article, index) =>
+  {this.props.articles.filter(article => article.description.toLowerCase().includes(this.props.searchText.toLowerCase())).map((article, index) =>
     <Article key={index}>
     <Image image={article.image} />
     <TextWrapper>
