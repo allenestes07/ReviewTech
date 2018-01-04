@@ -8,6 +8,7 @@ const Container = styled.div`
   flex-direction: row;
   height: 51px;
   padding-bottom: 5px;
+  background: rgba(33,33,33,.9);
   border-bottom: 1px solid #dedede ;
   width: 100%;
 `;
@@ -32,16 +33,15 @@ const NavItem = styled(Link)`
   background: none;
   border: none;
   cursor: pointer;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-family: "Gotham SSm A","Gotham SSm B",sans-serif;
+  font-weight: normal;
   font-size: 14px;
   line-height: 24px;
-  color: #000000;
+  color: #FFFFFF;
   text-decoration: none;
 
     &:hover {
-      color: #ec0000;
-      border-bottom: 3px solid #ec0000;
+      color: #1e88e5;
     }
 
   &:focus {
@@ -53,14 +53,14 @@ const SearchContainer = styled(Link)`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding: 15px 14px;
+  padding: 20px 14px;
   overflow: hidden;
   cursor: pointer;
-  color: #000000;
+  color: #FFFFFF;
   text-decoration: none;
 
   &:hover {
-    color: #ec0000;
+    color: #1e88e5;
   }
 `;
 
