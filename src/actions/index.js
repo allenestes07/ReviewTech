@@ -1,5 +1,6 @@
 export const ACTIVE_ARTICLE = 'ACTIVE_ARTICLE';
 export const SET_SEARCH = 'SET_SEARCH';
+export const HEADER_DROPWDOWN = 'HEADER_DROPWDOWN';
 
 export function selectedArticle(id, articles) {
   // console.log("Loaded :", articles);
@@ -15,5 +16,11 @@ export function setSearch(searchText) {
   return {
     type: SET_SEARCH,
     searchText
+  }
+}
+
+export function headerDropDown() {
+  return {
+    type: HEADER_DROPWDOWN
   }
 }

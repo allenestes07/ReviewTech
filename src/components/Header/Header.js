@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import FontAwesome from 'react-fontawesome';
+import * as headerDropDown from '../../actions/index';
+
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   height: 51px;
   padding-bottom: 5px;
   background: rgba(33,33,33,.9);
@@ -64,7 +69,23 @@ const SearchContainer = styled(Link)`
   }
 `;
 
+const DropDown = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  padding-bottom: 5px;
+  visibility: ${props => props.opened ? 'visible' : 'hidden'};
+  background: rgba(33,33,33,.9);
+  width: 100%;
+  z-index: 9999;
+`;
+
 class Header extends Component {
+
+  handleOnClick = (e) => {
+    this.props.clicked.headerDropDown();
+    e.preventDefault();
+  }
 
   arrowIcon = () => {
     return (
@@ -81,7 +102,10 @@ class Header extends Component {
         <Wrapper>
         <NavItemWrapper>
           <NavItem to="/">Home</NavItem>
-            <NavItem to="/article">
+            <NavItem
+              to="/"
+              onClick={(e) => this.handleOnClick(e) }
+            >
             Technology
             {this.arrowIcon()}
             </NavItem>
@@ -92,9 +116,22 @@ class Header extends Component {
               />
             </SearchContainer>
         </Wrapper>
+        <DropDown opened={this.props.opened}/>
       </Container>
     );
   }
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    opened: state.headerDropDown.opened
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    clicked: bindActionCreators(headerDropDown, dispatch)
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
