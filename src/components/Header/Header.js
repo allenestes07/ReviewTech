@@ -106,6 +106,7 @@ class Header extends Component {
             <NavItem
               to="/"
               onClick={(e) => this.handleOnClick(e, 'Technology') }
+              onBlur={(e) => this.handleOnClick(e, '') }
             >
             Technology
             {this.arrowIcon()}
@@ -113,6 +114,7 @@ class Header extends Component {
             <NavItem
               to="/"
               onClick={(e) => this.handleOnClick(e, 'Gaming') }
+              onBlur={(e) => this.handleOnClick(e, '') }
             >
             Gaming
             {this.arrowIcon()}
