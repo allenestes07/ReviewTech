@@ -19,8 +19,9 @@ export function setSearch(searchText) {
   }
 }
 
-export function headerDropDown() {
+export function headerDropDown(itemClicked) {
   return {
-    type: HEADER_DROPWDOWN
+    type: HEADER_DROPWDOWN,
+    itemClicked
   }
 }

@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import FontAwesome from 'react-fontawesome';
 import * as headerDropDown from '../../actions/index';
+import Technology from './Technology';
 
 
 const Container = styled.div`
@@ -72,7 +73,7 @@ const SearchContainer = styled(Link)`
 const DropDown = styled.div`
   display: flex;
   flex-direction: row;
-  height: 200px;
+  // height: 200px;
   padding-bottom: 5px;
   visibility: ${props => props.opened ? 'visible' : 'hidden'};
   background: rgba(33,33,33,.9);
@@ -82,8 +83,8 @@ const DropDown = styled.div`
 
 class Header extends Component {
 
-  handleOnClick = (e) => {
-    this.props.clicked.headerDropDown();
+  handleOnClick = (e, item) => {
+    this.props.clicked.headerDropDown(item);
     e.preventDefault();
   }
 
@@ -104,9 +105,16 @@ class Header extends Component {
           <NavItem to="/">Home</NavItem>
             <NavItem
               to="/"
-              onClick={(e) => this.handleOnClick(e) }
+              onClick={(e) => this.handleOnClick(e, 'Technology') }
             >
             Technology
+            {this.arrowIcon()}
+            </NavItem>
+            <NavItem
+              to="/"
+              onClick={(e) => this.handleOnClick(e, 'Gaming') }
+            >
+            Gaming
             {this.arrowIcon()}
             </NavItem>
           </NavItemWrapper>
@@ -116,7 +124,9 @@ class Header extends Component {
               />
             </SearchContainer>
         </Wrapper>
-        <DropDown opened={this.props.opened}/>
+        <DropDown opened={this.props.opened}>
+          {this.props.itemClicked === "Technology" ? <Technology menuItems={this.props.menuItems} /> : null }
+        </DropDown>
       </Container>
     );
   }
@@ -124,7 +134,9 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    opened: state.headerDropDown.opened
+    opened: state.headerDropDown.opened,
+    itemClicked: state.headerDropDown.itemClicked,
+    menuItems: state.menuItems,
   };
 };
 

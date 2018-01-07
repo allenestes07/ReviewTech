@@ -7,7 +7,8 @@ export default function (state = defaultState, action) {
   switch(action.type) {
     case "HEADER_DROPWDOWN":
     return Object.assign({}, state, {
-      opened: !state.opened
+      opened: !state.opened,
+      itemClicked: action.itemClicked
     })
     default: return state;
   }
