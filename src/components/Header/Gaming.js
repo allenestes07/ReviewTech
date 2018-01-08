@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import FontAwesome from 'react-fontawesome';
 
 const Container = styled.div`
   width: 100%;
@@ -51,18 +52,36 @@ const NavItem = styled(Link)`
 `;
 
 class Gaming extends Component {
+  Icons = (item) => {
+    return (
+      <FontAwesome
+        name = {item}
+        style={{
+          marginRight: '5px',
+          paddingBottom: '5px'
+        }}
+      />
+    );
+  }
+
   render() {
     return (
       <Container>
         <Wrapper>
           <ColumnOne>
             <NavItemWrapper>
-              <NavItem to="/">PS4</NavItem>
+              <NavItem to="/">
+                {this.Icons(this.props.menuItems[4].icon)}
+                {this.props.menuItems[4].item}
+              </NavItem>
             </NavItemWrapper>
           </ColumnOne>
           <ColumnTwo>
             <NavItemWrapper>
-              <NavItem to="/">Xbox One</NavItem>
+              <NavItem to="/">
+                {this.Icons(this.props.menuItems[5].icon)}
+                {this.props.menuItems[5].item}
+              </NavItem>
             </NavItemWrapper>
           </ColumnTwo>
         </Wrapper>

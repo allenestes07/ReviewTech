@@ -8,7 +8,7 @@ import AmazonFire from '../images/amazon-fire.jpg';
 export default function() {
   return [
     {
-      id: 1,
+      id: 0,
       description: "Should Apple get rid of the Mac Mini?",
       published: "December 30, 2017",
       image: `${macmini}`,
@@ -18,7 +18,7 @@ export default function() {
       ]
     },
     {
-      id: 2,
+      id: 1,
       description: "Blue Yeti Professional Microphone",
       published: "December 25, 2017",
       image: `${yeti}`,
@@ -29,7 +29,7 @@ export default function() {
       ]
     },
     {
-      id: 3,
+      id: 2,
       description: "Ring Doorbell is it worth the price?",
       published: "December 30, 2017",
       image: `${ringdoorbell}`,
@@ -41,7 +41,7 @@ export default function() {
       ]
     },
     {
-      id: 4,
+      id: 3,
       description: "The holiday is a great time to spend with family, and forget about work for a short period of time.",
       published: "December 23, 2017",
       image: `${christmas}`,
@@ -53,7 +53,7 @@ export default function() {
       ]
     },
     {
-      id: 5,
+      id: 4,
       description: "Nest Thermostat",
       published: "December 24, 2017",
       image: `${nest}`,
@@ -62,7 +62,7 @@ export default function() {
       ]
     },
     {
-      id: 6,
+      id: 5,
       description: "Should you buy the Amazon Fire 7 Kids Edition Tablet?",
       published: "January 2, 2018",
       image: `${AmazonFire}`,

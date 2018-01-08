@@ -20,5 +20,15 @@ export default function() {
    item: 'Wearables',
    icon: 'clock-o'
  },
+ {
+  id: 4,
+  item: 'PS4',
+  icon: 'gamepad'
+},
+{
+ id: 5,
+ item: 'Xbox One',
+ icon: 'gamepad'
+},
   ]
 }
