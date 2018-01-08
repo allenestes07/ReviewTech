@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import FontAwesome from 'react-fontawesome';
 import * as headerDropDown from '../../actions/index';
 import Technology from './Technology';
+import Gaming from './Gaming';
 
 
 const Container = styled.div`
@@ -74,7 +75,7 @@ const DropDown = styled.div`
   display: flex;
   flex-direction: row;
   // height: 200px;
-  padding-bottom: 5px;
+  // padding-bottom: 5px;
   visibility: ${props => props.opened ? 'visible' : 'hidden'};
   background: rgba(33,33,33,.9);
   width: 100%;
@@ -106,7 +107,6 @@ class Header extends Component {
             <NavItem
               to="/"
               onClick={(e) => this.handleOnClick(e, 'Technology') }
-              onBlur={(e) => this.handleOnClick(e, '') }
             >
             Technology
             {this.arrowIcon()}
@@ -114,7 +114,6 @@ class Header extends Component {
             <NavItem
               to="/"
               onClick={(e) => this.handleOnClick(e, 'Gaming') }
-              onBlur={(e) => this.handleOnClick(e, '') }
             >
             Gaming
             {this.arrowIcon()}
@@ -128,6 +127,7 @@ class Header extends Component {
         </Wrapper>
         <DropDown opened={this.props.opened}>
           {this.props.itemClicked === "Technology" ? <Technology menuItems={this.props.menuItems} /> : null }
+          {this.props.itemClicked === "Gaming" ? <Gaming menuItems={this.props.menuItems} /> : null }
         </DropDown>
       </Container>
     );
